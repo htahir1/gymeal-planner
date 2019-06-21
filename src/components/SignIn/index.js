@@ -7,13 +7,19 @@ import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
+  <MDBContainer>
+    <MDBRow>
+      <MDBCol md="12">
+        <h1>Sign In To Your Account</h1>
+        <SignInForm />
+        <PasswordForgetLink />
+        <SignUpLink />
+      </MDBCol>
+    </MDBRow>
+  </MDBContainer>
 );
 
 const INITIAL_STATE = {
@@ -55,27 +61,43 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      <MDBRow>
+          <MDBCol md="6">
+            <form onSubmit={this.onSubmit}>
+              <br />
+              <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+                Username
+              </label>
+              <input
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                type="text"
+                placeholder="Email Address"
+                className="form-control"
+              />
+              <br />
+              <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+                Password
+              </label>
+              <input
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                type="password"
+                placeholder="Password"
+                className="form-control"
+              />
+              <br />
+                <MDBBtn color="unique" type="submit" disabled={isInvalid}>
+                  Sign In
+                </MDBBtn>
 
-        {error && <p>{error.message}</p>}
-      </form>
+              {error && <p>{error.message}</p>}
+            </form>
+          </MDBCol>
+      </MDBRow>
+
     );
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -41,7 +40,7 @@ class Navigation extends Component {
 const NavigationAuth = () => (
   <MDBNavbar color="indigo" dark expand="md">
     <MDBNavbarBrand>
-      <strong className="white-text">GyMeal Planner</strong>
+      <strong className="white-text">GyMeal</strong>
     </MDBNavbarBrand>
       <MDBNavbarNav left>
         <MDBNavItem>
@@ -72,10 +71,10 @@ const NavigationNonAuth = () => (
 
   <MDBNavbar color="indigo" dark expand="md">
     <MDBNavbarBrand>
-      <strong className="white-text">Navbar</strong>
+      <strong className="white-text">GyMeal</strong>
     </MDBNavbarBrand>
     <MDBNavbarNav left>
-      <MDBNavItem active>
+      <MDBNavItem>
         <MDBNavLink to={ROUTES.LANDING}>Landing</MDBNavLink>
       </MDBNavItem>
       <MDBNavItem>

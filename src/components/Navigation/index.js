@@ -44,17 +44,15 @@ const NavigationAuth = () => (
     </MDBNavbarBrand>
       <MDBNavbarNav left>
         <MDBNavItem>
-          <MDBNavLink to={ROUTES.LANDING}>Landing</MDBNavLink>
-        </MDBNavItem>
-        <MDBNavItem>
           <MDBNavLink to={ROUTES.HOME}>Home</MDBNavLink>
         </MDBNavItem>
         <MDBNavItem>
-          <MDBNavLink to={ROUTES.ACCOUNT}>Account</MDBNavLink>
+          <MDBNavLink to={ROUTES.WORKOUT_ROUTINES}>Workout Routines</MDBNavLink>
         </MDBNavItem>
         <MDBNavItem>
-          <MDBNavLink to={ROUTES.ADMIN}>Admin</MDBNavLink>
+          <MDBNavLink to={ROUTES.MEAL_PLANS}>Meal Plans</MDBNavLink>
         </MDBNavItem>
+
 
 
       </MDBNavbarNav>

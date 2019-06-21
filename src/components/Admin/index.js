@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import { withFirebase } from '../Firebase';
+import { withAuthorization } from '../Session';
+
+const condition = authUser => !!authUser;
 
 class AdminPage extends Component {
   constructor(props) {
@@ -22,6 +25,8 @@ class AdminPage extends Component {
         ...usersObject[key],
         uid: key,
       }));
+
+      console.log(usersList);
 
       this.setState({
         users: usersList,
@@ -67,4 +72,4 @@ const UserList = ({ users }) => (
   </ul>
 );
 
-export default withFirebase(AdminPage);
+export default withFirebase(withAuthorization(condition)(AdminPage));

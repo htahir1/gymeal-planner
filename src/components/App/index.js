@@ -13,9 +13,13 @@ import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
+import {MDBContainer} from "mdbreact";
+
+
 const App = () => (
+  <MDBContainer fluid>
+
   <Router>
-    <div className="container-fluid">
     <Navigation />
 
       <hr />
@@ -31,8 +35,8 @@ const App = () => (
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
-    </div>
   </Router>
+  </MDBContainer>
 );
 
 export default withAuthentication(App);

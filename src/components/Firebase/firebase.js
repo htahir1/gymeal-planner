@@ -46,6 +46,9 @@ class Firebase {
   // *** Exercises API ***
 
   exercises = () => this.firestore.collection('exercises')
+
+  // *** Routines API ***
+  routines = () => this.firestore.collection('routines')
 }
 
 export default Firebase;
